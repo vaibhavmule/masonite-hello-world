@@ -3,5 +3,10 @@
 class HelloController:
     """Hello Controller"""
 
-    def show(self):
+    def index(self):
         return view('index')
+
+    
+    def show(self, Request):
+        name = Request.input('name')
+        return view('show', {'name': name})
