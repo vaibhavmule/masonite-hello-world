@@ -29,6 +29,11 @@
             <br><br>
 
             <div>
+                {%if flash.success}}
+                <div class="alert alert-success">
+                    {{.flash.success}}
+                </div>
+                {{end}}
                 <form action="/hello">
                     <input type="text" name="name" /><br/><br/>
                     <input type="submit" value="Say hello!" />
