@@ -11,9 +11,12 @@ class HelloController:
     
     def show(self, Request):
         validate = HelloValidator(Request).hello_form()
-        if validate.check():
-            name = Request.input('name')
-            return view('show', {'name': name})
-        else:
+        name = Request.input('name')
+
+        if not validate.check():
             Request.session.flash('validation', validate.errors())
+            if name:
+                Request.session.flash('name', name)
             return Request.redirect_to('index')
+
+        return view('show', {'name': name})
