@@ -29,11 +29,16 @@
             <br><br>
 
             <div>
-                {%if flash.success}}
-                <div class="alert alert-success">
-                    {{.flash.success}}
+
+                {% if session().has('validation') %}
+                <div>
+                    <ul>
+                        {% for key, value in session().get('validation').items() %}
+                        <li>{{ value }}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
-                {{end}}
+                {% endif %}
                 <form action="/hello">
                     <input type="text" name="name" /><br/><br/>
                     <input type="submit" value="Say hello!" />
