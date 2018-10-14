@@ -1,0 +1,9 @@
+{% if session().has('validation') %}
+<div>
+    <ul>
+        {% for key, value in session().get('validation').items() %}
+        <li>{{ value }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

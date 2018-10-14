@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 
+{% block content %}
 <div class="title m-b-md">
   Hello World in Masonite
 </div>
@@ -11,18 +12,10 @@
 <br><br>
 
 <div>
-  {% if session().has('validation') %}
-	<div>
-		<ul>
-			{% for key, value in session().get('validation').items() %}
-			<li>{{ value }}</li>
-			{% endfor %}
-		</ul>
-	</div>
-	{% endif %}
+	{% include 'flash.html' %}
 	<form action="/hello">
 		<input type="text" name="name" value="{% if session().has('name') %}{{session().get('name')}}{% endif %}" required/><br/><br/>
 		<input type="submit" value="Say hello!" />
 	</form>
 </div>
-            
+{% endblock %}
