@@ -1,7 +1,7 @@
 # Hello World Web App in Masonite
 Hello World Web App in Masonite that demontrates simple form, validations, flashing the message and greets the user by provided named in the form.
 
-## Greet the user
+## Greets the user
 ![Greet the user](screenshots/hello.png?raw=true "Greet the user")
 
 ## Form
