@@ -5,7 +5,6 @@ from masonite.providers import (
     SessionProvider,
     RouteProvider,
     StatusCodeProvider,
-    StartResponseProvider,
     SassProvider,
     WhitenoiseProvider,
     MailProvider,
@@ -40,7 +39,6 @@ PROVIDERS = [
     SessionProvider,
     RouteProvider,
     StatusCodeProvider,
-    StartResponseProvider,
     WhitenoiseProvider,
     ViewProvider,
 
