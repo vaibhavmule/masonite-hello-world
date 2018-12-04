@@ -1,22 +1,25 @@
 """Hello World Controller"""
+
+from masonite.view import View
+from masonite.request import Request
+
 from app.validators.HelloValidator import HelloValidator
 
 
 class HelloController:
     """Hello Controller"""
 
-    def index(self):
-        return view('index')
+    def index(self, view: View):
+        return view.render('index')
 
-    
-    def show(self, Request):
-        validate = HelloValidator(Request).hello_form()
-        name = Request.input('name')
+    def show(self, request: Request, view: View):
+        validate = HelloValidator(request).hello_form()
+        name = request.input('name')
 
         if not validate.check():
-            Request.session.flash('validation', validate.errors())
+            request.session.flash('validation', validate.errors())
             if name:
-                Request.session.flash('name', name)
-            return Request.redirect_to('index')
+                request.session.flash('name', name)
+            return request.redirect_to('index')
 
-        return view('show', {'name': name})
+        return view.render('show', {'name': name})
