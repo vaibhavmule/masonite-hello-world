@@ -5,10 +5,11 @@ name = "pypi"
 
 [packages]
 waitress = "==1.1.0"
-masonite = ">=2.0,<=2.0.99"
+masonite = "==2.1.0"
 
 [dev-packages]
 pylint = "*"
+masonite-cli = "*"
 
 [requires]
 python_version = "3.7"
