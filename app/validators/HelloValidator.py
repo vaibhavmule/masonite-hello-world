@@ -11,5 +11,3 @@ class HelloValidator(Validator):
         return self.validate({
             'name': [Required, Length(3)]
         })
-
-
